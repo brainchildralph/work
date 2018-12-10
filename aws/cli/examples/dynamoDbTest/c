@@ -47,7 +47,7 @@ iotRulePayloadDoc='{
               "rangeKeyType": "STRING", 
               "hashKeyType": "STRING", 
               "hashKeyField": "iot", 
-              "roleArn": "arn:aws:iam::133866807922:role/xxx", 
+              "roleArn": "arn:aws:iam::133866807922:role/'${iamRoleName}'", 
               "tableName": "sensorTest", 
               "hashKeyValue": "'${iotRuleName}'", 
               "rangeKeyField": "time"
