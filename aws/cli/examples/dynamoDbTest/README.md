@@ -12,3 +12,7 @@ $ ./d.sh
 ```
 $ cat ./c
 ```
+**Test Script**
+```
+$ ./t.sh
+```
