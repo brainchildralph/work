@@ -12,10 +12,14 @@ $ ./d.sh
 ```
 $ cat ./c
 ```
-**Test Script**
+**Publish data to AWS**
 ```
 $ ./t.sh
 ```
-![](https://screenshotscdn.firefoxusercontent.com/images/83ecf459-0f8e-4ac4-aff4-a28176ccb344.png)
 
+### **After run create script, what you will see on AWS.**
+
+- The table `dbTestTable` will be created on AWS DynamoDB console. 
+- The role `dbTestRole` will be created on AWS IAM console. 
+- The action `dbTestRule` will be created on AWS IoT Core console. 
 
