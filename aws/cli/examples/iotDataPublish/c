@@ -11,36 +11,8 @@ export AWS_DEFAULT_OUTPUT=json
 region=$AWS_DEFAULT_REGION
 accountId=$(echo -ne "U2FsdGVkX19Re0fN4Q6AeRIJaVv38EqqnLF46EbKOgQ=\n" | openssl enc -aes-256-cbc -a -d -pass pass:$password)
 set -x
-caseName=dbTest
-dbTableName=${caseName}Table
-dbAttrDefinitions=\
-'[
-  {
-    "AttributeName": "iot",
-    "AttributeType": "S"
-  },
-  {
-    "AttributeName": "time",
-    "AttributeType": "S"
-  }
-]'
-dbKeySchema=\
-'[
-  {
-    "KeyType": "HASH",
-    "AttributeName": "iot"
-  },
-  {
-    "KeyType": "RANGE", 
-    "AttributeName": "time" 
-  }
-]'
-dbProvisionedThroughput=\
-'{
-  "ReadCapacityUnits": 5,
-  "WriteCapacityUnits": 5}
-'
-iamRoleName=${caseName}Role
+caseName=xxx
+iamRoleName=${caseName}
 iamRoleTrustPolicyDoc=\
 '{
   "Version": "2012-10-17",
@@ -61,10 +33,10 @@ iamRolePermissionPolicyDoc=\
     "Statement": {
         "Effect": "Allow",
         "Action": "dynamodb:PutItem",
-        "Resource": "arn:aws:dynamodb:'$region':'$accountId':table/'${dbTableName}'"
+        "Resource": "arn:aws:dynamodb:'$region':'$accountId':table/sensorTest"
     }
 }'
-iotRuleName=${caseName}Rule
+iotRuleName=${caseName}Test
 iotRulePayloadDoc='{
   "awsIotSqlVersion": "2016-03-23", 
   "sql": "SELECT data AS data FROM '"'sensor'"'", 
@@ -76,7 +48,7 @@ iotRulePayloadDoc='{
               "hashKeyType": "STRING", 
               "hashKeyField": "iot", 
               "roleArn": "arn:aws:iam::133866807922:role/'${iamRoleName}'", 
-              "tableName": "'${dbTableName}'", 
+              "tableName": "sensorTest", 
               "hashKeyValue": "'${iotRuleName}'", 
               "rangeKeyField": "time"
           }

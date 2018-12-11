@@ -1,5 +1,10 @@
 #!/bin/bash
 source c
+aws dynamodb create-table \
+  --table-name ${dbTableName} \
+  --attribute-definitions "${dbAttrDefinitions}" \
+  --key-schema "${dbKeySchema}" \
+   --provisioned-throughput "${dbProvisionedThroughput}"
 aws iam create-role \
   --role-name ${iamRoleName} \
   --assume-role-policy-document "${iamRoleTrustPolicyDoc}"

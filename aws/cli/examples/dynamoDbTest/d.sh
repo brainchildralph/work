@@ -7,3 +7,4 @@ aws iam delete-role-policy \
   --policy-name ${iamRolePermissionPolicyName}
 aws iam delete-role \
   --role-name ${iamRoleName}
+aws dynamodb delete-table --table-name $dbTableName
