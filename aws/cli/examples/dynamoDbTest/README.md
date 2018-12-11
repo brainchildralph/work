@@ -16,6 +16,6 @@ $ cat ./c
 ```
 $ ./t.sh
 ```
-![](https://screenshotscdn.firefoxusercontent.com/images/83ecf459-0f8e-4ac4-aff4-a28176ccb344.png | width=100)
+![](https://screenshotscdn.firefoxusercontent.com/images/83ecf459-0f8e-4ac4-aff4-a28176ccb344.png)
 
-<img src="https://camo.githubusercontent.com/..." data-canonical-src="https://screenshotscdn.firefoxusercontent.com/images/83ecf459-0f8e-4ac4-aff4-a28176ccb344.png" width="200" />
+
