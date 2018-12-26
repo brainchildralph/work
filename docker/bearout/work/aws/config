@@ -1,12 +1,14 @@
-container=$(basename $(readlink -f ${dir}/../))
+container=$(basename $(readlink -f ${dir}))
 image=bearout/work:${container}
 build=${image}
 hostname=docker-${container}
 unset volumes
 declare -A volumes
-volumes[0,path]=/work/docker/volumes/share
+#volumes[0,path]=/work/docker/volumes/share
+#volumes[0,docker]=/share
+volumes[0,path]=/media/sf_share
 volumes[0,docker]=/share
 unset ports
 declare -A ports
 ports[0]=3001:3001
-restart=always
+#restart=always

@@ -8,6 +8,7 @@ volumes[0,path]=/work/docker/volumes/share
 volumes[0,docker]=/share
 unset ports
 declare -A ports
-#ports[0]=3001:3001
+ports[0]=80:80
+ports[1]=443:443
 #restart=always
 #network=host
