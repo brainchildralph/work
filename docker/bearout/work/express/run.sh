@@ -10,10 +10,11 @@ for ((i=0;i<${#ports[@]};i++)) ; do
   ports_cmd=${ports_cmd}${ports[${i}]:+-p ${ports[${i}]} }
 done
 cmd="docker run --name $container -it 
+   ${restart:+--restart ${restart}}
    $volumes_cmd
    $ports_cmd
    ${hostname:+-h ${hostname}}
-   ${1:+--network=host} 
+   ${network:+--network=${network}} 
    --privileged
    $image"
 echo $cmd
