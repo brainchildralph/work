@@ -1,4 +1,4 @@
 FROM bearout/work:samba
 WORKDIR /root
-ADD start.sh /root
+ADD ./fs/start.sh /root
 CMD /root/start.sh
