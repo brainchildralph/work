@@ -1,0 +1,12 @@
+container=$(basename $(readlink -f ${dir}/../))
+image=bearout/work:${container}
+build=work:build
+hostname=docker-${container}
+unset volumes
+declare -A volumes
+volumes[0,path]=/work/docker/volumes/share
+volumes[0,docker]=/share
+unset ports
+declare -A ports
+ports[0]=80:80
+ports[1]=443:443

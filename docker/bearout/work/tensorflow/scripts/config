@@ -1,0 +1,4 @@
+container=tensorflow
+image=bearout/tensorflow
+build=work:build
+hostname=docker-tensorflow
