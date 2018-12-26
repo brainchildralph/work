@@ -1,7 +1,7 @@
 #!/bin/bash
 dir=$(dirname $(readlink -f $0))
 source $dir/config
-cmd="docker start -i $container"
+cmd="docker stop $container"
 echo $cmd
 $cmd
 
